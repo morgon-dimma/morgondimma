@@ -1,0 +1,38 @@
+<!doctype html><html lang="sv"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Example page - morgondimma</title><meta name="description" content="This is just an example page"><link rel="icon" href="/static/favicon.svg" type="image/svg+xml"><link rel="canonical" href="https://morgondimma.se/posts/example-page"><!-- Open Graph --><meta property="og:title" content="Example page"><meta property="og:type" content="article"><meta property="og:site_name" content="morgondimma"><meta property="og:description" content="This is just an example page"><meta property="og:url" content="https://morgondimma.se/posts/example-page"><meta property="og:image" content="https://morgondimma.se/uploads/originals/6bbf38c2448f42f2dce19d6545421b9b.jpeg"><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Example page"><meta name="twitter:description" content="This is just an example page"><meta name="twitter:image" content="https://morgondimma.se/uploads/originals/6bbf38c2448f42f2dce19d6545421b9b.jpeg"><script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script><link rel="stylesheet" href="/static/style.css?v=1781539733"></head><body><header class="site-header"><a href="/" class="site-logo">morgondimma</a> <button class="hamburger" id="menu-toggle" aria-label="Menu"><span></span> <span></span> <span></span></button><nav class="site-nav" id="site-nav"><div class="nav-links" id="nav-links"></div></nav></header><main><article class="post"><header class="post-header"><h1>Example page</h1><div class="post-meta"><time datetime="2026-06-15">15 juni 2026</time></div><p class="post-excerpt">This is just an example page</p></header><figure class="post-hero"><img src="/uploads/originals/6bbf38c2448f42f2dce19d6545421b9b.jpeg" alt="Example page"></figure><div class="post-content"><p>Lorem ipsum dolor sit amet. Non nesciunt neque At quasi ipsa sed nostrum dolore ut necessitatibus galisum? Et rerum similique ea consequatur quas ab harum porro. A quibusdam unde est quia amet sed iure itaque in rerum officiis. A veniam veniam ut doloremque distinctio est cupiditate ullam cum delectus debitis in dicta fugit ut praesentium voluptas aut praesentium sint!</p>
+<p>Aut quia eligendi et voluptates libero qui soluta illo. Ut aliquid officia qui esse facere eum quasi eligendi et enim sunt aut voluptatem enim. Aut accusamus facilis ab fugiat aperiam et soluta itaque ut cumque corporis et blanditiis unde quo nesciunt blanditiis ut rerum itaque?</p>
+<figure><img src="/uploads/originals/6bbf38c2448f42f2dce19d6545421b9b.jpeg" alt="image"><figcaption>Skadis domain</figcaption></figure>
+<p>Aut commodi officia ut quod velit ea asperiores excepturi cum tempore commodi rem dolores voluptas. Non architecto placeat vel natus quia id repudiandae consequatur qui quae voluptatem. In eius voluptatibus sed suscipit omnis et pariatur exercitationem ea obcaecati assumenda est unde quis.</p>
+</div></article><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Example page","datePublished":"2026-06-15T15:19:00Z","dateModified":"2026-06-15T15:21:21Z","url":"https://morgondimma.se/posts/example-page","image":"https://morgondimma.se/uploads/originals/6bbf38c2448f42f2dce19d6545421b9b.jpeg","description":"This is just an example page"}</script></main><footer><div class="footer-inner"><div class="newsletter"><h3>Prenumerera</h3><p>Få nya inlägg direkt i din inkorg.</p><form hx-post="/api/subscribe" hx-target="find button" hx-swap="outerHTML"><input type="email" name="email" placeholder="din@epost.se" required> <button type="submit">Prenumerera</button></form></div><p class="footer-copy">&copy; 2026 morgondimma</p></div></footer><script>
+				(function() {
+					var toggle = document.getElementById('menu-toggle');
+					var nav = document.getElementById('site-nav');
+					function closeNav() {
+						nav.classList.remove('open');
+						toggle.classList.remove('open');
+						document.body.classList.remove('nav-open');
+					}
+					toggle.addEventListener('click', function() {
+						if (nav.classList.contains('open')) {
+							closeNav();
+						} else {
+							nav.classList.add('open');
+							toggle.classList.add('open');
+							document.body.classList.add('nav-open');
+						}
+					});
+					function renderNav(items) {
+						var container = document.getElementById('nav-links');
+						items.forEach(function(item) {
+							var a = document.createElement('a');
+							a.href = item.url;
+							a.textContent = item.label;
+							container.appendChild(a);
+						});
+					}
+					if (window.__NAV_ITEMS__) {
+						renderNav(window.__NAV_ITEMS__);
+					} else {
+						fetch('/api/nav').then(function(r) { return r.json(); }).then(renderNav);
+					}
+				})();
+			</script></body></html>
